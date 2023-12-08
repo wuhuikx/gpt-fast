@@ -1,0 +1,1 @@
+python generate.py --checkpoint_path checkpoints/codellama/CodeLlama-34b-Python-hf/model.pth --device xpu --prompt 'please show me code for printing hello' --compile --profile ./ --num_samples 2 --max_new_tokens 2

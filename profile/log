@@ -1,0 +1,44 @@
+/home/pt-gpu/4T-4652/envs/wuhui/lib/python3.9/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: ''If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+/home/pt-gpu/4T-4652/jgong5/pytorch/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+[2023-12-07 19:58:10,494] [0/0] torch._dynamo.output_graph: [WARNING] nn.Module state_dict and backward hooks are not yet supported by torch.compile, but were detected in your model and will be silently ignored. See https://pytorch.org/docs/master/compile/nn-module.html for more information and limitations.
+skipping cudagraphs for unknown reason
+STAGE:2023-12-07 19:59:00 1599004:1599004 XPUActivityProfilerController.cpp:271] Completed Stage: Warm Up
+STAGE:2023-12-07 19:59:01 1599004:1599004 XPUActivityProfilerController.cpp:278] Completed Stage: Collection
+STAGE:2023-12-07 19:59:01 1599004:1599004 XPUActivityProfilerController.cpp:281] Completed Stage: Post Processing
+Loading model ...
+model=Transformer(
+  (tok_embeddings): Embedding(32000, 8192)
+  (layers): ModuleList(
+    (0-47): 48 x TransformerBlock(
+      (attention): Attention(
+        (wqkv): Linear(in_features=8192, out_features=10240, bias=False)
+        (wo): Linear(in_features=8192, out_features=8192, bias=False)
+      )
+      (feed_forward): FeedForward(
+        (w1): Linear(in_features=8192, out_features=22016, bias=False)
+        (w3): Linear(in_features=8192, out_features=22016, bias=False)
+        (w2): Linear(in_features=22016, out_features=8192, bias=False)
+      )
+      (ffn_norm): RMSNorm()
+      (attention_norm): RMSNorm()
+    )
+  )
+  (norm): RMSNorm()
+  (output): Linear(in_features=8192, out_features=32000, bias=False)
+)
+Time to load model: 76.04 seconds
+----model_size=67487940608
+--num_samples=2
+Compilation time: 50.12 seconds
+please show me code for printing hello world using
+Time for inference 1: 0.19 sec total, 10.26 tokens/sec
+Bandwidth achieved: 692.38 GB/s
+--need_profile=True
+please show me code for printing hello world on
+Time for inference 2: 5.52 sec total, 0.36 tokens/sec
+Bandwidth achieved: 24.45 GB/s
+==========
+Average tokens/sec: 5.31
+Memory used: 0.00 GB

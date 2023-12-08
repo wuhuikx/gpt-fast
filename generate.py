@@ -306,6 +306,7 @@ def main(
     print("Loading model ...")
     t0 = time.time()
     model = _load_model(checkpoint_path, device, precision, use_tp)
+    print("model={}".format(model))
 
     if is_speculative:
         draft_model = _load_model(draft_checkpoint_path, device, precision, use_tp)
